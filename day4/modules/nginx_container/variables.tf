@@ -7,6 +7,6 @@ variable "container_port" {
 }
 
 variable "image_name" {
-  type = string
+  type    = string
   default = "nginx:latest"
 }
