@@ -1,0 +1,26 @@
+terraform {
+  required_providers {
+    docker = {
+      source  = "kreuzwerker/docker"
+      version = "~> 3.0"
+    }
+  }
+}
+
+provider "docker" {}
+
+# First container
+module "nginx1" {
+  source = "./modules/nginx_container"
+
+  container_name = "nginx_1"
+  container_port = 8081
+}
+
+# Second container
+module "nginx2" {
+  source = "./modules/nginx_container"
+
+  container_name = "nginx_2"
+  container_port = 8082
+}
